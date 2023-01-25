@@ -1,0 +1,150 @@
+html{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    letter-spacing: 1px;
+}
+body{
+    margin: auto;
+    overflow-x: hidden;
+}
+header{
+    padding: 7vw;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+main{
+    margin: auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+button{
+    font-family: inherit;
+    font-weight: inherit;
+}
+.top-hero-image{
+    width: 100vw;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+}
+.top-hero-image img{
+    position: relative;
+    max-width: 95vw;
+    z-index: 1;
+}
+.top-hero-image>div{
+    z-index: 0;
+    position: absolute;
+    top: 14vw;
+    left: 20vw;
+    bottom: 0;
+    right: 0;
+    width: 80vw;
+    height: 200px;
+    border-radius: 30% 0 0 35%;
+    background-color: hsl(231, 69%, 60%);
+}
+.simple-bookmark-manager{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.simple-bookmark-manager>h1,p{
+    width: 70vw;
+    word-wrap: break-word;
+}
+.simple-bookmark-manager>p{
+    color: #a1a1a3;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.simple-bookmark-manager>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+.simple-bookmark-manager button{
+    padding: 15px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #f7f7f7;
+    color: black;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.simple-bookmark-manager button:hover{
+    background-color: hsl(231, 69%, 60%);
+    color: white;
+}
+.features{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.features p{
+    color: #a1a1a3;
+    font-weight: 400;
+}
+.features-elements-container{
+    width: 100%;
+    margin-top: 15px;
+    border-top: 1px solid gray;
+    font-weight: 400;
+}
+.features-element{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+.red-underline{
+    height: 0;
+
+}
+.features-element:hover .red-underline{
+    height: 2px;
+    width: 40%;
+    background-color: hsl(0, 94%, 66%);
+    padding: 0 10px;
+}
+.illustration-tab1{
+    width: 100vw;
+    height: 265px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.illustration-tab1 img{
+    position: relative;
+    max-width: 85vw;
+    z-index: 1;
+    margin-left: 7.5vw;
+}
+.illustration-tab1>div{
+    z-index: 0;
+    position: absolute;
+    top: 14vw;
+    left: 0;
+    bottom: 0;
+    right: 20vw;
+    width: 80vw;
+    height: 200px;
+    border-radius: 0 30% 30% 0;
+    background-color: hsl(231, 69%, 60%);
+}
