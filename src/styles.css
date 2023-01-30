@@ -15,6 +15,24 @@ header{
     align-items: center;
     margin-bottom: 10px;
 }
+p{
+    color: #a1a1a3;
+    font-weight: 400;
+    text-align: center;
+}
+h1{text-align: center;}
+input{
+    width: 70vw;
+    max-width: 600px;
+    padding: 15px 5vw;
+    border: none;
+    border-radius: 4px;
+}
+input:focus{
+    outline: greenyellow;
+    /* border: 1px solid black; */
+    /* outline: black; */
+}
 main{
     margin: auto;
     width: 90vw;
@@ -67,8 +85,8 @@ button{
     word-wrap: break-word;
 }
 .simple-bookmark-manager>p{
-    color: #a1a1a3;
-    font-weight: 400;
+    /* color: #a1a1a3;
+    font-weight: 400; */
     margin-bottom: 25px;
 }
 .simple-bookmark-manager>div{
@@ -95,10 +113,19 @@ button{
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: -25px;
+    gap: 100px;
+}
+.features>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .features p{
-    color: #a1a1a3;
-    font-weight: 400;
+    /* color: #a1a1a3;
+    font-weight: 400; */
+    text-align: center;
 }
 .features-elements-container{
     width: 100%;
@@ -147,4 +174,165 @@ button{
     height: 200px;
     border-radius: 0 30% 30% 0;
     background-color: hsl(231, 69%, 60%);
+}
+.extensions-container{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-bottom: 50px;
+}
+.extesnion-carts{
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0 0 10px 10px;
+
+    gap: 30px;
+}
+.extension-cart-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.extension-cart-title h3,p{
+    margin: 0;
+}
+.extesnion-carts button{
+    font-weight: 500;
+    padding: 15px 10px;
+    border-radius: 6px;
+    background-color: hsl(231, 69%, 60%);
+    border: none;
+    color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.FAQ-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.FAQ-container>button{
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: hsl(231, 69%, 60%);
+    border: none;
+    color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* *************** */
+.accordion {
+    width: 90%;
+    max-width: 1000px;
+    margin: 2rem auto;
+  }
+  .accordion-item {
+    color: #111;
+    border-bottom: 1px solid gray;
+  }
+  
+  .accordion-item-header {
+    padding: 10px 48px 0 16px;
+    min-height: 3.5rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .accordion-item-header::after {
+    content: "\276F";
+    transform:rotate(90deg) ;
+    color: hsl(231, 69%, 60%);
+    position: absolute;
+    right: 1rem;
+  }
+  
+  .accordion-item-header.active::after {
+      content: "\276F";
+      transform:rotate(270deg) ;
+      color: hsl(0, 94%, 66%);
+  }
+  
+  .accordion-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
+  .accordion-item-body-content {
+    color: #7e7e88;
+    padding: 1rem;
+    line-height: 1.5rem;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #34495e, transparent) 1;
+  }
+/* *************** */
+.footer{
+    margin-top: 50px;
+    width: 100vw;
+    height: 500px;
+}
+.contact-us{
+    background-color: hsl(231, 69%, 60%);
+    padding: 30px 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    gap: 15px;
+}
+.contact-us p{
+    color: inherit;
+    width: 100%;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+}
+.contact-us>div{
+    font-size: 1.3rem;
+    font-weight: 500;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+.contact-us button{
+    margin-top: 20px;
+    width: 80vw;
+    padding: 15px 5vw;
+    /* box-sizing: border-box; */
+    border-radius: 4px;
+    border: none;
+    color: white;
+    background-color: hsl(0, 94%, 66%);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #242946;
+    color: white;
+    padding: 40px 0;
+}
+.footer-links>div:last-of-type{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.footer-links path:first-of-type{
+    fill: white;
 }
