@@ -1,3 +1,5 @@
+/* @import "mediaQuery.css"; */
+
 html{
     font-family: 'Rubik', sans-serif;
     margin: 0;
@@ -8,6 +10,7 @@ body{
     overflow-x: hidden;
 }
 header{
+    position: sticky;
     padding: 7vw;
     height: 8vh;
     /* height: auto; */
@@ -162,11 +165,20 @@ form button:disabled{
 .hamburger-menue-btn{
     display: block;
 }
+.desktop-nav{
+    display: none;
+}
+.desktop-nav button{
+    background-color: hsl(0, 94%, 66%) !important;
+    padding: 10px 25px;
+    border-radius: 4px;
+    color: white;
+}
 .top-hero-image{
     width: 100vw;
     position: relative;
     height: auto;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .top-hero-image img{
     position: relative;
@@ -181,7 +193,7 @@ form button:disabled{
     bottom: 0;
     right: 0;
     width: 80vw;
-    height: 200px;
+    /* height: 200px; */
     border-radius: 30% 0 0 35%;
     background-color: hsl(231, 69%, 60%);
 }
@@ -268,9 +280,9 @@ form button:disabled{
 }
 .illustration-tab1{
     width: 100vw;
-    height: 265px;
+    /* height: 265px; */
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-top: 20px;
 }
 .illustration-tab1 img{
@@ -278,6 +290,7 @@ form button:disabled{
     max-width: 85vw;
     z-index: 1;
     margin-left: 7.5vw;
+    margin-bottom: 5vw;
 }
 .illustration-tab1>div{
     z-index: 0;
@@ -287,7 +300,8 @@ form button:disabled{
     bottom: 0;
     right: 20vw;
     width: 80vw;
-    height: 200px;
+    max-width: 500px;
+    /* height: 200px; */
     border-radius: 0 30% 30% 0;
     background-color: hsl(231, 69%, 60%);
 }
@@ -298,6 +312,7 @@ form button:disabled{
     margin-bottom: 50px;
 }
 .extesnion-carts{
+    width: 280px;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
@@ -396,7 +411,7 @@ form button:disabled{
 .footer{
     margin-top: 50px;
     width: 100vw;
-    height: 500px;
+    /* height: 500px; */
 }
 .contact-us{
     background-color: hsl(231, 69%, 60%);
@@ -424,6 +439,7 @@ form button:disabled{
 .contact-us button{
     margin-top: 20px;
     width: 80vw;
+    max-width: 600px;
     padding: 15px 5vw;
     /* box-sizing: border-box; */
     border-radius: 4px;
@@ -541,10 +557,17 @@ form button:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     background-color: #242946;
     color: white;
     padding: 40px 0;
+}
+.footer-links>div:first-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 .footer-links>div:last-of-type{
     display: flex;
@@ -555,3 +578,33 @@ form button:hover{
 .footer-links path:first-of-type{
     fill: white;
 }
+
+@media screen and (min-width:620px){
+    .hamburger-menu-container{
+        display: none;
+    }
+    .desktop-nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2vw;
+        color: rgba(0,0,0,0.7);
+    }
+    .footer-links{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .footer-links>div:first-child{
+        flex-direction: row;
+        font-size: 0.8rem;
+        opacity: 0.8;
+    }
+}
+
+@media screen and (max-width: 374px) {
+    .top-hero-image>div {
+        top: 21vw;
+        height: 150px;
+    }
+  }
