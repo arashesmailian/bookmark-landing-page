@@ -65,13 +65,14 @@ h1{text-align: center;}
 input{
     width: 80vw;
     max-width: 100%;
-    padding: 15px 0;
+    padding: 15px 10px;
     border: none;
     border-radius: 4px;
     margin-bottom: 5px;
 }
 input:focus{
-    outline-color: transparent;
+    /* outline-color: transparent; */
+    outline: none;
 }
 input::placeholder{
     padding-left: 5vw;
@@ -89,6 +90,7 @@ main{
 button{
     font-family: inherit;
     font-weight: inherit;
+    cursor: pointer;
 }
 em{
     font-size: 0.7rem;
@@ -276,10 +278,14 @@ form button:disabled{
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid gray;
+    color: gray;
 }
-
+.features-element:hover{
+    color: black;
+}
 .features-description-btn{
     display: none;
+    cursor: pointer;
 }
 .red-underline{
     display: none;
@@ -472,7 +478,7 @@ form button:disabled{
 }
 .contact-us button{
     margin-top: 20px;
-    width: 80vw;
+    width: 100%;
     /* max-width: 600px; */
     padding: 15px 5vw;
     /* box-sizing: border-box; */
@@ -487,7 +493,8 @@ form button:disabled{
 /* ************** */
 
 .input-container{
-    width: 80vw;
+    /* width: 80vw; */
+    width: 100%;
     padding: 0; /* this will change in emailValidation */
     background-color: inherit; /* this will change in emailValidation */
     border-radius: 5px;
@@ -634,17 +641,19 @@ form button:hover{
         grid-template-columns: 50vw 50vw;
         row-gap: 100px;
         column-gap: 0;
-        /* grid-gap: 10px; */
     }
     form{
-        width: 600px;
+        max-width: 600px;
+        width: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        /* gap: 15px; */
+        gap: 30px;
     }
     input{
         margin-bottom: 0;
+        width: 95%;
     }
     header{
         padding: 25px;
@@ -660,9 +669,31 @@ form button:hover{
         gap: 2vw;
         color: rgba(0,0,0,0.7);
     }
+    .desktop-nav>div:hover{
+        color: hsl(0, 94%, 66%);
+    }
+    .desktop-nav button:hover{
+        background-color: white !important;
+        color: hsl(0, 94%, 66%);
+        border: 1px solid hsl(0, 94%, 66%);
+    }
     .simple-bookmark-manager{
         /* display: grid; */
         grid-area: simple-bookmark-manager;
+    }
+    .simple-bookmark-manager>div>button:first-of-type{
+        background-color: hsl(231, 69%, 60%);
+        color: white;
+    }
+    .simple-bookmark-manager>div>button:first-of-type:hover{
+        background-color: white;
+        color: hsl(231, 69%, 60%);
+        border: 2px solid hsl(231, 69%, 60%);
+    }
+    .simple-bookmark-manager>div>button:last-of-type:hover{
+        background-color: white;
+        color: black;
+        border: 2px solid black;
     }
     .top-hero-image{
         /* display: grid; */
@@ -686,9 +717,13 @@ form button:hover{
     }
     .features-element{
         border-bottom: none;
+        color: black;
+    }
+    .features-element:hover{
+        color: hsl(0, 94%, 66%);
     }
     .red-underline{
-        widows: 60%;
+        width: 60%;
     }
     .features-description-btn{
         display:block;
@@ -701,6 +736,7 @@ form button:hover{
         border-radius: 6px;
         border: none;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        cursor: pointer;
     }
     /* .bookmark-description button{
         display:block;
@@ -741,12 +777,21 @@ form button:hover{
     .download-extension{
         /* display: grid; */
         grid-area: download-extension;
+        margin-top: 50px;
     }
     .extensions-container{
-        /* display: grid; */
         grid-area: extension-container;
-        flex-direction: row;
         height: 500px;
+        width: 70%;
+        margin: auto;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 0;
+    }
+    .extesnion-carts>button:hover{
+        background-color: white;
+        color: hsl(231, 69%, 60%);
+        border: 2px solid hsl(231, 69%, 60%);
     }
     .extesnion-carts:nth-of-type(1){
         align-self: start;
@@ -760,16 +805,22 @@ form button:hover{
     .FAQ-container{
         /* display: grid; */
         grid-area: FAQ-container;
+        margin: auto;
+    }
+    .accordion-item-header:hover{
+        color: hsl(0, 94%, 66%);
     }
     .footer{
         /* display: grid; */
         grid-area: footer;
         width: 100%;
+        margin: auto;
     } 
     .footer-links{
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
+        gap: 10vw;
     }
     .footer-links>div:first-child{
         flex-direction: row;
@@ -778,6 +829,11 @@ form button:hover{
     }
     .contact-us{
         height: 250px;
+        width: 100%;
+        padding: 30px 0;
+    }
+    .contact-us>p{
+        margin-bottom: 35px;
     }
     .contact-us>div{
         max-width: 450px;
@@ -785,11 +841,12 @@ form button:hover{
     }
     .contact-us button{
         width: 130px;
-        padding: 15px 10px;
+        padding: 7px 35px;
         margin-top: 0;
+        flex-basis: 0;
     }
     .input-container{
-        max-width: 400px;
+        /* max-width: 400px; */
     }
     .input-container>em{
         padding-top: 10px;
