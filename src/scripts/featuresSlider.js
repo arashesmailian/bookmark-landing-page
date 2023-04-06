@@ -2,12 +2,6 @@ const tabs = document.querySelectorAll(".features-element");
 const illustrationTab = document.querySelectorAll(".illustration-tab1>img");
 const descriptions = document.querySelectorAll("main>section:nth-child(5)>div");
 const redUnderline = document.querySelectorAll(".red-underline");
-/* ***LOGS*** */
-console.log(tabs);
-console.log(illustrationTab);
-console.log(descriptions);
-console.log(redUnderline);
-/* ***LOGS*** */
 
 tabs.forEach((tab, index) => {
   tab.addEventListener("click", (onClickEvent) => {
