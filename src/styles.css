@@ -11,14 +11,17 @@ body{
 }
 header{
     position: sticky;
+    top: 0;
     padding: 7vw;
-    height: 8vh;
-    /* height: auto; */
+    /* height: 8vh; */
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    background-color: white;
+    z-index: 10;
     /* background-color: rgba(47,53,79,1); */
 }
 header>div:first-of-type button{
@@ -60,9 +63,9 @@ p{
 }
 h1{text-align: center;}
 input{
-    width: 70vw;
-    max-width: 600px;
-    padding: 15px 5vw;
+    width: 80vw;
+    max-width: 100%;
+    padding: 15px 0;
     border: none;
     border-radius: 4px;
     margin-bottom: 5px;
@@ -70,9 +73,13 @@ input{
 input:focus{
     outline-color: transparent;
 }
+input::placeholder{
+    padding-left: 5vw;
+}
 main{
     margin: auto;
-    width: 90vw;
+    /* width: 90vw; */
+    padding: 0 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -173,9 +180,10 @@ form button:disabled{
     padding: 10px 25px;
     border-radius: 4px;
     color: white;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
 }
 .top-hero-image{
-    width: 100vw;
+    width: 100%;
     position: relative;
     height: auto;
     /* overflow: hidden; */
@@ -192,7 +200,7 @@ form button:disabled{
     left: 20vw;
     bottom: 0;
     right: 0;
-    width: 80vw;
+    width: 75vw;
     /* height: 200px; */
     border-radius: 30% 0 0 35%;
     background-color: hsl(231, 69%, 60%);
@@ -209,7 +217,8 @@ form button:disabled{
     letter-spacing: 1px;
 }
 .simple-bookmark-manager>h1,p{
-    width: 70vw;
+    /* width: 70vw; */
+    max-width: 480px;
     word-wrap: break-word;
 }
 .simple-bookmark-manager>p{
@@ -268,15 +277,23 @@ form button:disabled{
     align-items: center;
     border-bottom: 1px solid gray;
 }
-.red-underline{
-    height: 0;
 
+.features-description-btn{
+    display: none;
 }
-.features-element:hover .red-underline{
+.red-underline{
+    display: none;
     height: 2px;
     width: 40%;
     background-color: hsl(0, 94%, 66%);
     padding: 0 10px;
+}
+.features-element:hover .red-underline{
+    display: block;
+    /* height: 2px;
+    width: 40%;
+    background-color: hsl(0, 94%, 66%);
+    padding: 0 10px; */
 }
 .illustration-tab1{
     width: 100vw;
@@ -295,7 +312,8 @@ form button:disabled{
 .illustration-tab1>div{
     z-index: 0;
     position: absolute;
-    top: 14vw;
+    /* top: 14vw; */
+    top: 7vw;
     left: 0;
     bottom: 0;
     right: 20vw;
@@ -305,6 +323,21 @@ form button:disabled{
     border-radius: 0 30% 30% 0;
     background-color: hsl(231, 69%, 60%);
 }
+.searching-description{
+    display: none;
+}
+.sharing-description{
+    display: none;
+}
+.download-extension{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .download-extension p{
+    text-align: center;
+} */
 .extensions-container{
     display: flex;
     flex-direction: column;
@@ -347,6 +380,7 @@ form button:disabled{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 600px;
 }
 .FAQ-container>button{
     font-weight: 500;
@@ -439,7 +473,7 @@ form button:disabled{
 .contact-us button{
     margin-top: 20px;
     width: 80vw;
-    max-width: 600px;
+    /* max-width: 600px; */
     padding: 15px 5vw;
     /* box-sizing: border-box; */
     border-radius: 4px;
@@ -453,6 +487,7 @@ form button:disabled{
 /* ************** */
 
 .input-container{
+    width: 80vw;
     padding: 0; /* this will change in emailValidation */
     background-color: inherit; /* this will change in emailValidation */
     border-radius: 5px;
@@ -580,6 +615,41 @@ form button:hover{
 }
 
 @media screen and (min-width:620px){
+    main{
+        display: grid;
+        /* grid-template-areas: 'simple-bookmark-manager simple-bookmark-manager top-hero-image top-hero-image'
+                             'features features features features'
+                             'illustration-tab1 illustration-tab1 features-tab features-tab'
+                             'download-extension download-extension download-extension download-extension'
+                             'extension-container extension-container extension-container extension-container'
+                             'FAQ-container FAQ-container FAQ-container FAQ-container'
+                             'footer footer footer footer'; */
+        grid-template-areas: 'simple-bookmark-manager top-hero-image'
+                             'features features'
+                             'illustration-tab1 features-tab'
+                             'download-extension download-extension'
+                             'extension-container extension-container'
+                             'FAQ-container FAQ-container'
+                             'footer footer';
+        grid-template-columns: 50vw 50vw;
+        row-gap: 100px;
+        column-gap: 0;
+        /* grid-gap: 10px; */
+    }
+    form{
+        width: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+    input{
+        margin-bottom: 0;
+    }
+    header{
+        padding: 25px;
+        margin-bottom: 50px;
+    }
     .hamburger-menu-container{
         display: none;
     }
@@ -590,15 +660,146 @@ form button:hover{
         gap: 2vw;
         color: rgba(0,0,0,0.7);
     }
+    .simple-bookmark-manager{
+        /* display: grid; */
+        grid-area: simple-bookmark-manager;
+    }
+    .top-hero-image{
+        /* display: grid; */
+        grid-area: top-hero-image;
+    }
+    .features{
+        /* display: grid; */
+        grid-area: features;
+        margin-top: 0;
+        /* margin */
+    }
+    .features>div{
+        width: 40%;
+    }
+    .features-elements-container{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #a1a1a3;
+        border-top: none;
+        margin-top: 30px;
+    }
+    .features-element{
+        border-bottom: none;
+    }
+    .red-underline{
+        widows: 60%;
+    }
+    .features-description-btn{
+        display:block;
+        margin-top: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: hsl(231, 69%, 60%);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 6px;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    /* .bookmark-description button{
+        display:block;
+        margin-top: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: hsl(231, 69%, 60%);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 6px;
+        border: none;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    } */
+    /* .features-element .red-underline{
+        height: 2px;
+        width: 60%;
+        background-color: hsl(0, 94%, 66%);
+        padding: 0 10px;
+    } */
+    .illustration-tab1{
+        /* display: grid; */
+        grid-area: illustration-tab1;
+    }
+    main>section:nth-child(5){
+        /* display: grid; */
+        grid-area: features-tab;
+    }
+    main>section:nth-child(5)>div{
+        align-items: start;
+        width: 60%;
+    }
+    main>section:nth-child(5) p{
+        text-align: start;
+    }
+    main>section:nth-child(3){
+        margin-bottom: -40px;
+    }
+    .download-extension{
+        /* display: grid; */
+        grid-area: download-extension;
+    }
+    .extensions-container{
+        /* display: grid; */
+        grid-area: extension-container;
+        flex-direction: row;
+        height: 500px;
+    }
+    .extesnion-carts:nth-of-type(1){
+        align-self: start;
+    }
+    .extesnion-carts:nth-of-type(2){
+        align-self: center;
+    }
+    .extesnion-carts:nth-of-type(3){
+        align-self: end;
+    }
+    .FAQ-container{
+        /* display: grid; */
+        grid-area: FAQ-container;
+    }
+    .footer{
+        /* display: grid; */
+        grid-area: footer;
+        width: 100%;
+    } 
     .footer-links{
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
     }
     .footer-links>div:first-child{
         flex-direction: row;
         font-size: 0.8rem;
         opacity: 0.8;
+    }
+    .contact-us{
+        height: 250px;
+    }
+    .contact-us>div{
+        max-width: 450px;
+        font-size: 1.8rem;
+    }
+    .contact-us button{
+        width: 130px;
+        padding: 15px 10px;
+        margin-top: 0;
+    }
+    .input-container{
+        max-width: 400px;
+    }
+    .input-container>em{
+        padding-top: 10px;
+    }
+    .top-hero-image img{
+        max-width: 45vw;
+    }
+    .top-hero-image>div{
+        width: 30vw;
+        top: 7vw;
     }
 }
 
