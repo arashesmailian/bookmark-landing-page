@@ -272,6 +272,12 @@ form button:disabled{
     border-top: 1px solid gray;
     font-weight: 400;
 }
+.features-elements-container>div:first-of-type{
+    color: black;
+}
+.features-elements-container>div:first-of-type .red-underline{
+    display: block;
+}
 .features-element{
     display: flex;
     flex-direction: column;
@@ -352,14 +358,13 @@ form button:disabled{
 }
 .extesnion-carts{
     width: 280px;
-    padding: 20px 0;
+    padding: 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 0 0 10px 10px;
-
     gap: 30px;
 }
 .extension-cart-title{
@@ -669,6 +674,9 @@ form button:hover{
         gap: 2vw;
         color: rgba(0,0,0,0.7);
     }
+    .desktop-nav>div{
+        cursor: pointer;
+    }
     .desktop-nav>div:hover{
         color: hsl(0, 94%, 66%);
     }
@@ -676,6 +684,9 @@ form button:hover{
         background-color: white !important;
         color: hsl(0, 94%, 66%);
         border: 1px solid hsl(0, 94%, 66%);
+    }
+    .top-hero-image img{
+        max-width: 50vw;
     }
     .simple-bookmark-manager{
         /* display: grid; */
@@ -717,7 +728,8 @@ form button:hover{
     }
     .features-element{
         border-bottom: none;
-        color: black;
+        color: gray;
+        cursor: pointer;
     }
     .features-element:hover{
         color: hsl(0, 94%, 66%);
@@ -760,6 +772,10 @@ form button:hover{
         /* display: grid; */
         grid-area: illustration-tab1;
     }
+    .illustration-tab1 img,.illustration-tab1 div{
+        max-width: 50vw;
+    }
+
     main>section:nth-child(5){
         /* display: grid; */
         grid-area: features-tab;
@@ -786,7 +802,16 @@ form button:hover{
         margin: auto;
         flex-direction: row;
         justify-content: space-evenly;
-        gap: 0;
+        gap: 30px;
+    }
+    .extesnion-carts{
+        font-size: 79%;
+    }
+    .extesnion-carts>button{
+        width: 90%;
+    }
+    .extesnion-carts>object:last-of-type{
+        width: 100%;
     }
     .extesnion-carts>button:hover{
         background-color: white;
@@ -817,8 +842,9 @@ form button:hover{
         margin: auto;
     } 
     .footer-links{
+        padding: 40px 40px;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
         gap: 10vw;
     }
@@ -826,6 +852,15 @@ form button:hover{
         flex-direction: row;
         font-size: 0.8rem;
         opacity: 0.8;
+    }
+    .footer-links>div:first-of-type>div,.footer-links>div:last-of-type>svg{
+        cursor: pointer;
+    }
+    .footer-links>div:first-of-type>div:hover{
+        color: hsl(0, 94%, 66%);
+    }
+    .footer-links>div:last-of-type>svg:hover path {
+        fill: hsl(0, 94%, 66%);
     }
     .contact-us{
         height: 250px;

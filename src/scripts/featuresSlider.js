@@ -5,9 +5,11 @@ const redUnderline = document.querySelectorAll(".red-underline");
 
 tabs.forEach((tab, index) => {
   tab.addEventListener("click", (onClickEvent) => {
+    tabs.forEach((t) => (t.style.color = "gray"));
     /* inserting underline */
     redUnderline.forEach((underline) => (underline.style.display = "none"));
     redUnderline[index].style.display = "block";
+    tab.style.color = "black";
 
     /* changing illustration image */
     illustrationTab.forEach((image) => (image.style.display = "none"));
